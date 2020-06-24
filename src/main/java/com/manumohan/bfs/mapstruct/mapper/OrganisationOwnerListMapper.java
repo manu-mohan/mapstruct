@@ -5,6 +5,7 @@ import com.manumohan.bfs.mapstruct.util.ListUtil;
 import org.mapstruct.CollectionMappingStrategy;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.NullValuePropertyMappingStrategy;
@@ -14,10 +15,12 @@ import org.mapstruct.ReportingPolicy;
 	nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
 	collectionMappingStrategy = CollectionMappingStrategy.SETTER_PREFERRED,
 	unmappedTargetPolicy = ReportingPolicy.ERROR,
-	uses = { ListUtil.class },
+	uses = {ListUtil.class, CustomListMapper.class},
 	componentModel = "spring",
 	injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface OrganisationOwnerListMapper
 {
+	@Mapping(source = "ownerList", target = "ownerList", qualifiedByName = {"CustomListMapper", "ownerListMapper"})
+	@Mapping(target = "personDetailsList", qualifiedByName = "personDetailsListMapper")
 	void updateOrganisationOwnerList(@MappingTarget OrganisationOwnerList source, OrganisationOwnerList update);
 }

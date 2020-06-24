@@ -6,6 +6,9 @@ import java.util.List;
 public class OrganisationOwnerList
 {
 	private List<OrganisationOwner> organisationOwnerList = new ArrayList<>();
+	private List<CodeNameType>      ownerList             = new ArrayList<>();
+	private List<CodeNameType>      organisationList      = new ArrayList<>();
+	private List<PersonDetails>     personDetailsList     = new ArrayList<>();
 
 	public List<OrganisationOwner> getOrganisationOwnerList()
 	{
@@ -15,5 +18,35 @@ public class OrganisationOwnerList
 	public void setOrganisationOwnerList(List<OrganisationOwner> organisationOwnerList)
 	{
 		this.organisationOwnerList = organisationOwnerList;
+	}
+
+	public List<CodeNameType> getOwnerList()
+	{
+		return ownerList;
+	}
+
+	public void setOwnerList(List<CodeNameType> ownerList)
+	{
+		this.ownerList = ownerList;
+	}
+
+	public List<CodeNameType> getOrganisationList()
+	{
+		return organisationList;
+	}
+
+	public void setOrganisationList(List<CodeNameType> organisationList)
+	{
+		this.organisationList = organisationList;
+	}
+
+	public List<PersonDetails> getPersonDetailsList()
+	{
+		return personDetailsList;
+	}
+
+	public void setPersonDetailsList(List<PersonDetails> personDetailsList)
+	{
+		this.personDetailsList = personDetailsList;
 	}
 }
