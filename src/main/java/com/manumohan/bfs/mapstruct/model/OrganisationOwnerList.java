@@ -9,6 +9,7 @@ public class OrganisationOwnerList
 	private List<CodeNameType>      ownerList             = new ArrayList<>();
 	private List<CodeNameType>      organisationList      = new ArrayList<>();
 	private List<PersonDetails>     personDetailsList     = new ArrayList<>();
+	private List<String>            states                = new ArrayList<>();
 
 	public List<OrganisationOwner> getOrganisationOwnerList()
 	{
@@ -48,5 +49,15 @@ public class OrganisationOwnerList
 	public void setPersonDetailsList(List<PersonDetails> personDetailsList)
 	{
 		this.personDetailsList = personDetailsList;
+	}
+
+	public List<String> getStates()
+	{
+		return states;
+	}
+
+	public void setStates(List<String> states)
+	{
+		this.states = states;
 	}
 }

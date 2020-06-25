@@ -1,6 +1,7 @@
 package com.manumohan.bfs.mapstruct.util;
 
 import org.mapstruct.MappingTarget;
+import org.mapstruct.Named;
 
 import javax.annotation.ManagedBean;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 @ManagedBean
 public class ListUtil
 {
+	@Named("genericListMapper")
 	public <T> void mapList(@MappingTarget List<T> sourceList, List<T> updateList)
 	{
 		if (updateList != null && !updateList.isEmpty())

@@ -20,7 +20,9 @@ import org.mapstruct.ReportingPolicy;
 	injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface OrganisationOwnerListMapper
 {
-	@Mapping(source = "ownerList", target = "ownerList", qualifiedByName = {"CustomListMapper", "ownerListMapper"})
+	@Mapping(target = "ownerList", qualifiedByName = {"CustomListMapper", "ownerListMapper"})
 	@Mapping(target = "personDetailsList", qualifiedByName = "personDetailsListMapper")
+	@Mapping(target = "organisationOwnerList", qualifiedByName = "genericListMapper")
+	@Mapping(target = "organisationList", qualifiedByName = "genericListMapper")
 	void updateOrganisationOwnerList(@MappingTarget OrganisationOwnerList source, OrganisationOwnerList update);
 }
